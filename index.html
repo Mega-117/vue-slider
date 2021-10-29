@@ -12,26 +12,37 @@
     <!-- foontAwsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+
+
     <link rel="stylesheet" href="css/style.css">
 
     <title>Vue Slider</title>
 </head>
 
 <body>
-    <div class="container">
+
+    <div id="app" class="container">
+
+
         <div class="row mt-5 slider-box">
             <div class="col-10 section-left p-0 position-relative">
-                <img class="img-big active" src="img/01.jpg" alt="">
-                <img class="img-big" src="img/02.jpg" alt="">
-                <img class="img-big" src="img/03.jpg" alt="">
-                <img class="img-big" src="img/04.jpg" alt="">
-                <img class="img-big" src="img/05.jpg" alt="">
 
-                <div class="text-box">
-                    <h1>Titolo</h1>
-                    <p>decrizione</p>
+                <div class="slide" v-for="elemento,indice in listaImg">
+                    <img class="img-big active" v-bind:src="listaImg[indice].urlImg" v-bind:alt=`immagine-${indice}`>
+
+                    <div class="text-box active">
+                        <h1>Titolo</h1>
+                        <p>decrizione</p>
+                    </div>
                 </div>
+
+
             </div>
+
+
 
             <div class="col-2 section-right p-0 position-relative">
                 <div class="nav-slider nav-ico">
@@ -40,23 +51,23 @@
                     <i class="arrow-down fas fa-chevron-circle-down"></i>
 
                 </div>
-                <div class="position-relative">
+                <div class="box-img-section-right">
                     <img class="img-section-right" src="img/01.jpg" alt="">
                     <div class="active-layer active"></div>
                 </div>
-                <div class="position-relative">
+                <div class="box-img-section-right">
                     <img class="img-section-right" src="img/02.jpg" alt="">
                     <div class="active-layer"></div>
                 </div>
-                <div class="position-relative">
+                <div class="box-img-section-right">
                     <img class="img-section-right" src="img/03.jpg" alt="">
                     <div class="active-layer"></div>
                 </div>
-                <div class="position-relative">
+                <div class="box-img-section-right">
                     <img class="img-section-right" src="img/04.jpg" alt="">
                     <div class="active-layer"></div>
                 </div>
-                <div class="position-relative">
+                <div class="box-img-section-right">
                     <img class="img-section-right" src="img/05.jpg" alt="">
                     <div class="active-layer"></div>
                 </div>
@@ -64,6 +75,9 @@
             </div>
         </div>
     </div>
+
+    <script src="js/script.js"></script>
+
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 .img-section-right{
     width: 100%;
-    height: calc( 100% / 5 );
+    height: 100%;
     object-fit: cover;
 }
 
@@ -22,6 +22,11 @@
 
 .img-big.active{
     opacity: 1;
+}
+.box-img-section-right{
+    position: relative;
+    height: calc( 100% / 5 );
+
 }
 
 .text-box{
