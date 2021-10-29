@@ -15,11 +15,12 @@
 }
 
 .slider-box{
-    width: 80%;
+    width: 90%;
     margin: auto;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 
+.text-box.active,
 .img-big.active{
     opacity: 1;
 }
@@ -30,11 +31,13 @@
 }
 
 .text-box{
+    padding-left: 20px;
     position: absolute;
     bottom: 20px;
     right: 20px;
     color: white;
     text-shadow: 2px 2px 4px #000000;
+    opacity: 0;
 }
 
 .text-box p{

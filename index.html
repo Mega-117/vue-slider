@@ -34,8 +34,8 @@
                     <img class="img-big active" v-bind:src="listaImg[indice].urlImg" v-bind:alt=`immagine-${indice}`>
 
                     <div class="text-box active">
-                        <h1>Titolo</h1>
-                        <p>decrizione</p>
+                        <h1>{{listaImg[indice].titolo}}</h1>
+                        <p>{{listaImg[indice].testo}}</p>
                     </div>
                 </div>
 
@@ -51,26 +51,11 @@
                     <i class="arrow-down fas fa-chevron-circle-down"></i>
 
                 </div>
-                <div class="box-img-section-right">
-                    <img class="img-section-right" src="img/01.jpg" alt="">
+                <div class="box-img-section-right" v-for="imgPreviw, i in listaImg">
+                    <img class="img-section-right" v-bind:src="listaImg[i].urlImg" alt="">
                     <div class="active-layer active"></div>
                 </div>
-                <div class="box-img-section-right">
-                    <img class="img-section-right" src="img/02.jpg" alt="">
-                    <div class="active-layer"></div>
-                </div>
-                <div class="box-img-section-right">
-                    <img class="img-section-right" src="img/03.jpg" alt="">
-                    <div class="active-layer"></div>
-                </div>
-                <div class="box-img-section-right">
-                    <img class="img-section-right" src="img/04.jpg" alt="">
-                    <div class="active-layer"></div>
-                </div>
-                <div class="box-img-section-right">
-                    <img class="img-section-right" src="img/05.jpg" alt="">
-                    <div class="active-layer"></div>
-                </div>
+
 
             </div>
         </div>
