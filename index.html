@@ -30,12 +30,13 @@
         <div class="row mt-5 slider-box">
             <div class="col-10 section-left p-0 position-relative">
 
-                <div class="slide" v-for="elemento,indice in listaImg">
-                    <img class="img-big active" v-bind:src="listaImg[indice].urlImg" v-bind:alt=`immagine-${indice}`>
+                <div class="slide" v-for="(elemento, indice) in listaImg">
+                    <img class="img-big" v-bind:class="indice === currentImgActive? 'active' : '' "
+                        v-bind:src="elemento.urlImg" v-bind:alt="'immagine-' + (indice + 1)">
 
-                    <div class="text-box active">
-                        <h1>{{listaImg[indice].titolo}}</h1>
-                        <p>{{listaImg[indice].testo}}</p>
+                    <div class="text-box" v-bind:class="indice ===currentImgActive?'active':''">
+                        <h1>{{elemento.titolo}}</h1>
+                        <p>{{elemento.testo}}</p>
                     </div>
                 </div>
 
@@ -46,14 +47,16 @@
 
             <div class="col-2 section-right p-0 position-relative">
                 <div class="nav-slider nav-ico">
-                    <i class="arrow-up fas fa-chevron-circle-up"></i>
+                    <i @click="prevImg()" class="arrow-up fas fa-chevron-circle-up"></i>
 
-                    <i class="arrow-down fas fa-chevron-circle-down"></i>
+                    <i @click="nextImg()" class="arrow-down fas fa-chevron-circle-down"></i>
 
                 </div>
-                <div class="box-img-section-right" v-for="imgPreviw, i in listaImg">
-                    <img class="img-section-right" v-bind:src="listaImg[i].urlImg" alt="">
-                    <div class="active-layer active"></div>
+                <div class="box-img-section-right" v-for="(imgPreviw, i) in listaImg">
+                    <img class="img-section-right" v-bind:src="listaImg[i].urlImg"
+                        v-bind:alt="'img-preview-' + (i + 1)">
+                    <div class="active-layer" v-bind:class="currentImgActive === i?'active':''"
+                        v-model="currentImgActive"></div>
                 </div>
 
 

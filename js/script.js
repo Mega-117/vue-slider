@@ -4,10 +4,6 @@ window.addEventListener("DOMContentLoaded", function () {
     const vueApp = new Vue({
         el: "#app",
         data: {
-            pippo: [
-                "pluto",
-                "gino",
-            ],
             listaImg: [
                 {
                     urlImg: 'img/01.jpg',
@@ -34,7 +30,29 @@ window.addEventListener("DOMContentLoaded", function () {
                     titolo: 'Paradise',
                     testo: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
                 }
-            ]
+            ],
+            classActive: "active",
+            currentImgActive: 0,
+        },
+
+        methods: {
+            prevImg() {
+                let indexNuovaImg = this.currentImgActive - 1;
+                if (indexNuovaImg < 0) {
+                    indexNuovaImg = this.listaImg.length - 1;
+                }
+
+                this.currentImgActive = indexNuovaImg;
+            },
+            nextImg() {
+                let indexNuovaImg = this.currentImgActive + 1;
+                if (indexNuovaImg > this.listaImg.length - 1) {
+                    indexNuovaImg = 0;
+                }
+                this.currentImgActive = indexNuovaImg;
+
+
+            }
         }
     });
 });
